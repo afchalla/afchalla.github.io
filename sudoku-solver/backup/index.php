@@ -33,6 +33,7 @@ markup;
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="js/index.js"></script>
+		<script src="js/sudoku.js"></script>
 		<title>Sudoku Solver</title>
 		<meta name="keywords" content="sudoku, solve, solver, afchalla, 9x9">
 		<meta name="description" content="Solve and verify your Sudokus">
