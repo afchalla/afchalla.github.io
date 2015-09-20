@@ -1,0 +1,52 @@
+body {
+	text-align: center;
+	font-family:"Helvetica";
+	margin: 2em;
+	background-color: rgb(199,199,199);
+    color: rgb(40,40,40);
+}
+
+#sudoku-table {
+	border: solid;
+	margin: 3em auto;
+}
+
+#sudoku-table .bd-right{
+	border-style:none solid none none;
+}
+
+#sudoku-table .bd-right-bottom{
+	border-style:none solid solid none;
+}
+
+#sudoku-table .bd-bottom{
+	border-style:none none solid none;
+}
+
+#sudoku-table td input {
+	font-size:1em;
+	width: 3.5em;
+	height: 3.5em;
+	text-align: center;
+	background-color: rgb(240,240,240);
+}
+
+.btn {
+	width:10em;
+	margin: 0 auto;
+	cursor: pointer;
+	font-weight:bold;
+	font-size: 1em;
+}
+
+#btn-clear {
+	display: none;
+}
+
+#response-text {
+	margin: 2em auto;
+}
+
+footer {
+	font-size: 0.5em;
+}
