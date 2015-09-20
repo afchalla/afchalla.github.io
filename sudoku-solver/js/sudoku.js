@@ -79,33 +79,34 @@ var sudokuSolver = {
 		}
 	},
 
-	main: function(argc, argv) {
-		if(argc <= 1) {
-			return -1;
-		}
+	main: function(size, inputs) {
 
 		this.input = [];
 		this.marker = [];
 
-		for (var i = 0; i < SUDOKU_SIZE; i++) {
-			this.input.push(new Array(SUDOKU_SIZE));
-			this.marker.push(new Array(SUDOKU_SIZE));
+		this.size = parseInt(size);
+		this.root = Math.sqrt(this.size);
+
+		for (var i = 0; i < this.size; i++) {
+			this.input.push(new Array(this.size));
+			this.marker.push(new Array(this.size));
 		}
 
-		this.size = parseInt(argv[1]);
-		this.root = Math.sqrt(this.size);
+		if(inputs.length != (this.size * this.size)) {
+			return -1;
+		}
 
 		var row = 0;
 		var col = 0;
 
-		for(var i = 2; i < argc; i++) {
+		for(var i = 0; i < inputs.length; i++) {
 
 			//clear the existing values
 			this.input[row][col] = 0;
 			this.marker[row][col] = 0;
 
 			//Input the values and mark the appropriate fields
-			this.input[row][col] = parseInt(argv[i]);
+			this.input[row][col] = parseInt(inputs[i]);
 
 			if(this.input[row][col] != 0) {
 				this.marker[row][col] = 1;

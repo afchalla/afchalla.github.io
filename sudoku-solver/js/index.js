@@ -24,19 +24,17 @@ function onClear() {
 
 function getSolution() {
 	var inputArray = [];
-	inputArray.push("SUDOKU_SIZE");
-	inputArray.push(SUDOKU_SIZE);
 	for (var row = 0; row < SUDOKU_SIZE; row++) {
 		for (var col = 0; col < SUDOKU_SIZE; col++) {
 			var input = parseInt($("#input"+row+col).val());
 			if(isNaN(input)) {
-				input = "0";
+				input = 0;
 			}
 			inputArray.push(input);
 		}
 	}
 
-	var msg = sudokuSolver.main(83, inputArray);
+	var msg = sudokuSolver.main(SUDOKU_SIZE, inputArray);
 	if(msg == "-1" || msg == "-2" || msg == "-3") {
 		$("#response-text").html("Oops! Something wrong with the input. Please try again!");
 		$("#response-text").css("color", "red");
