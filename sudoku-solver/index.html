@@ -1,0 +1,286 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="js/index.js"></script>
+		<title>Sudoku Solver</title>
+		<meta name="keywords" content="sudoku, solve, solver, afchalla, 9x9">
+		<meta name="description" content="Solve and verify your Sudokus">
+	</head>
+
+	<body>
+		<div>Enter a given 9x9 Sudoku and see if we can get the answer for you!</div>
+		<div>
+			<table id="sudoku-table" cellspacing="0" cellpadding="0">
+			   <tbody>
+			      <tr>
+			         <td class="">
+			            <input id="input00" onchange="validateInput('input00')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input01" onchange="validateInput('input01')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right">
+			            <input id="input02" onchange="validateInput('input02')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input03" onchange="validateInput('input03')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input04" onchange="validateInput('input04')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right">
+			            <input id="input05" onchange="validateInput('input05')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input06" onchange="validateInput('input06')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input07" onchange="validateInput('input07')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input08" onchange="validateInput('input08')" type="number" min="1" max="9">
+			         </td>
+			      </tr>
+			      <tr>
+			         <td class="">
+			            <input id="input10" onchange="validateInput('input10')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input11" onchange="validateInput('input11')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right">
+			            <input id="input12" onchange="validateInput('input12')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input13" onchange="validateInput('input13')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input14" onchange="validateInput('input14')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right">
+			            <input id="input15" onchange="validateInput('input15')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input16" onchange="validateInput('input16')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input17" onchange="validateInput('input17')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input18" onchange="validateInput('input18')" type="number" min="1" max="9">
+			         </td>
+			      </tr>
+			      <tr>
+			         <td class="bd-bottom">
+			            <input id="input20" onchange="validateInput('input20')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-bottom">
+			            <input id="input21" onchange="validateInput('input21')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right-bottom">
+			            <input id="input22" onchange="validateInput('input22')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-bottom">
+			            <input id="input23" onchange="validateInput('input23')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-bottom">
+			            <input id="input24" onchange="validateInput('input24')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right-bottom">
+			            <input id="input25" onchange="validateInput('input25')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-bottom">
+			            <input id="input26" onchange="validateInput('input26')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-bottom">
+			            <input id="input27" onchange="validateInput('input27')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-bottom">
+			            <input id="input28" onchange="validateInput('input28')" type="number" min="1" max="9">
+			         </td>
+			      </tr>
+			      <tr>
+			         <td class="">
+			            <input id="input30" onchange="validateInput('input30')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input31" onchange="validateInput('input31')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right">
+			            <input id="input32" onchange="validateInput('input32')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input33" onchange="validateInput('input33')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input34" onchange="validateInput('input34')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right">
+			            <input id="input35" onchange="validateInput('input35')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input36" onchange="validateInput('input36')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input37" onchange="validateInput('input37')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input38" onchange="validateInput('input38')" type="number" min="1" max="9">
+			         </td>
+			      </tr>
+			      <tr>
+			         <td class="">
+			            <input id="input40" onchange="validateInput('input40')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input41" onchange="validateInput('input41')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right">
+			            <input id="input42" onchange="validateInput('input42')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input43" onchange="validateInput('input43')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input44" onchange="validateInput('input44')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right">
+			            <input id="input45" onchange="validateInput('input45')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input46" onchange="validateInput('input46')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input47" onchange="validateInput('input47')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input48" onchange="validateInput('input48')" type="number" min="1" max="9">
+			         </td>
+			      </tr>
+			      <tr>
+			         <td class="bd-bottom">
+			            <input id="input50" onchange="validateInput('input50')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-bottom">
+			            <input id="input51" onchange="validateInput('input51')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right-bottom">
+			            <input id="input52" onchange="validateInput('input52')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-bottom">
+			            <input id="input53" onchange="validateInput('input53')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-bottom">
+			            <input id="input54" onchange="validateInput('input54')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right-bottom">
+			            <input id="input55" onchange="validateInput('input55')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-bottom">
+			            <input id="input56" onchange="validateInput('input56')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-bottom">
+			            <input id="input57" onchange="validateInput('input57')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-bottom">
+			            <input id="input58" onchange="validateInput('input58')" type="number" min="1" max="9">
+			         </td>
+			      </tr>
+			      <tr>
+			         <td class="">
+			            <input id="input60" onchange="validateInput('input60')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input61" onchange="validateInput('input61')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right">
+			            <input id="input62" onchange="validateInput('input62')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input63" onchange="validateInput('input63')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input64" onchange="validateInput('input64')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right">
+			            <input id="input65" onchange="validateInput('input65')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input66" onchange="validateInput('input66')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input67" onchange="validateInput('input67')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input68" onchange="validateInput('input68')" type="number" min="1" max="9">
+			         </td>
+			      </tr>
+			      <tr>
+			         <td class="">
+			            <input id="input70" onchange="validateInput('input70')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input71" onchange="validateInput('input71')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right">
+			            <input id="input72" onchange="validateInput('input72')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input73" onchange="validateInput('input73')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input74" onchange="validateInput('input74')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right">
+			            <input id="input75" onchange="validateInput('input75')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input76" onchange="validateInput('input76')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input77" onchange="validateInput('input77')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input78" onchange="validateInput('input78')" type="number" min="1" max="9">
+			         </td>
+			      </tr>
+			      <tr>
+			         <td class="">
+			            <input id="input80" onchange="validateInput('input80')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input81" onchange="validateInput('input81')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right">
+			            <input id="input82" onchange="validateInput('input82')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input83" onchange="validateInput('input83')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input84" onchange="validateInput('input84')" type="number" min="1" max="9">
+			         </td>
+			         <td class="bd-right">
+			            <input id="input85" onchange="validateInput('input85')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input86" onchange="validateInput('input86')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input87" onchange="validateInput('input87')" type="number" min="1" max="9">
+			         </td>
+			         <td class="">
+			            <input id="input88" onchange="validateInput('input88')" type="number" min="1" max="9">
+			         </td>
+			      </tr>
+			   </tbody>
+			</table>
+			<button id="btn-soln" class="btn" onclick="getSolution()">Get Solution</button>
+			<button id="btn-clear" class="btn" onclick="onClear()">Enter another</button>
+			<div id="response-text"></div>
+		</div>
+		<footer>Made by <a target="_blank" href="https://afchalla.github.io">Abdul Qadir</a></footer>
+	</body>
+</html>
